@@ -2,21 +2,27 @@ import React from "react";
 import "./App.css";
 
 const products = [
-  { title: 'Kubis', id: 1 },
-  { title: 'Bawang Putih', id: 2 },
-  { title: 'Apel', id: 3 },
+  { title: "Kubis", isFruit: false, id: 1 },
+  { title: "Bawang Putih", isFruit: false, id: 2 },
+  { title: "Apel", isFruit: true, id: 3 },
 ];
 
-export default function App () {
-
+export default function App() {
   const listItems = products.map((product) => (
-    <li key={product.id}>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? "magenta" : "darkgreen",
+      }}
+    >
       {product.title}
     </li>
-  ))
+  ));
+
+  
   return (
-   <div>
-    <ul>{listItems}</ul>
-   </div>
-  )
+    <div>
+      <ul>{listItems}</ul>
+    </div>
+  );
 }
