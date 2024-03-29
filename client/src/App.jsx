@@ -7,10 +7,10 @@ const App = () => {
     );
   }
   return (
-   <div>
-    <h1>Welcome to my react app</h1>
-    <MyButton />
-   </div>
+   <>
+   <h1>Tentang</h1>
+   <p>Halo.<br/> apa kabar?</p>
+   </>
   );
 };
 
