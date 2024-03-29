@@ -1,23 +1,22 @@
 import React from "react";
 import "./App.css";
 
-const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-  imageSize: 90,
-};
+const products = [
+  { title: 'Kubis', id: 1 },
+  { title: 'Bawang Putih', id: 2 },
+  { title: 'Apel', id: 3 },
+];
 
-export default function Profile () {
+export default function App () {
+
+  const listItems = products.map((product) => (
+    <li key={product.id}>
+      {product.title}
+    </li>
+  ))
   return (
-    <>
-    <h1>{user.name}</h1>
-    <img 
-    src={user.imageUrl} 
-    alt={`foto ${user.name}`} 
-    style={{
-      width: user.imageSize,
-      height: user.imageSize,
-    }}/>
-    </>
+   <div>
+    <ul>{listItems}</ul>
+   </div>
   )
 }
