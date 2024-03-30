@@ -80,3 +80,13 @@ export default function Board() {
     </>
   );
 }
+
+
+let products = [
+  //
+]
+
+let NewProduct ;
+for(let i= 0; i < products; i++) {
+  NewProduct += i
+}
