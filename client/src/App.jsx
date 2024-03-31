@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Profile from "./components/Profile";
+import LearnButton from "./components/LearnButton";
 
 const App = () => {
-  
+
+
   return (
     <div>
       <h1> my biodata</h1>
-      <Profile></Profile> 
+      {/* <Profile></Profile>  */}
+      <LearnButton />
     </div>
   );
 };
