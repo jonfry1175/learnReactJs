@@ -1,22 +1,31 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import NowLoading from "./NowLoading";
 
 const Profile = () => {
-  const [users, setUsers] = useState([
-    {
-      name: "andri",
-      age: "20",
-      hobby: "coding",
-    },
-    {
-      name: "jojo",
-      age: "19",
-      hobby: "mandi",
-    },
-  ]);
+  const [users, setUsers] = useState([]);
+
+  const getUsers = async () => {
+    try {
+      const res = await axios({
+        method: "get",
+        url: "http://localhost:3000/users",
+      });
+      setUsers(res.data);
+      // console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  useEffect(() => {
+    getUsers()
+  }, [])
 
   return (
     <>
+      {/* <button onClick={getUsers}>Get Data</button> */}
       <table border="1">
         <thead>
           <tr>
